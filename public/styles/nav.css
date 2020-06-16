@@ -1,0 +1,20 @@
+nav {
+display: flex;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFF;
+  padding: 1.5em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-default {
+  border: none;
+  background-color:#4056A1;
+
+}
+
+.arrows {
+  display: block;
+  margin: 0 auto;
+}

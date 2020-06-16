@@ -1,0 +1,26 @@
+.testing {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#tweet-text {
+  border-radius: 5px;
+  box-shadow: orchid;
+  padding: 10px;
+  border-bottom: 4px;
+  border-style: solid;
+  background-color: lightgray
+}
+
+.button-counter {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+button {
+  border-radius: 4px;
+  background-color:#4056A1;
+  font-family: Bungee;
+}
