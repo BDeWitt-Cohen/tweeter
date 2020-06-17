@@ -25,6 +25,17 @@
   opacity: .5;
 }
 
+.name-avatar{
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.avatar {
+  max-height: 25px;
+  max-width: 25px;
+}
+
 .inner-border{
   border: black 3px;
 }

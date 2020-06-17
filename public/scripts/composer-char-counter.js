@@ -1,7 +1,6 @@
 
 
 $(() => {
-  console.log("this page has loaded and is good to go");
 
   //need to identify what element we want to target
   const $tweetBox = $("#tweet-text")
