@@ -1,75 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!--New Fonts to use-->
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!--New Fonts to use-->
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
 
-    <!-- Nav Bar CSS -->
-    <link rel="stylesheet" href="/styles/nav.css">
+  <!-- Font Awesome for icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!--  Header CSS-->
-    <link rel="stylesheet" href="/styles/header.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!--  New Tweet CSS-->
-    <link rel="stylesheet" href="/styles/new-tweet.css">
+  <!-- Nav Bar CSS -->
+  <link rel="stylesheet" href="/styles/nav.css">
 
-    <!--  Bringing in JQuery-->
-    <script src="/vendor/jquery-2.2.3.min.js"></script>
+  <!--  Header CSS-->
+  <link rel="stylesheet" href="/styles/header.css">
 
-    <!--  Character Counter JS-->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <!--  New Tweet CSS-->
+  <link rel="stylesheet" href="/styles/new-tweet.css">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--  Posted Tweets CSS-->
+  <link rel="stylesheet" href="/styles/posted-tweets.css">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!--  Bringing in JQuery-->
+  <script src="/vendor/jquery-2.2.3.min.js"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span style="font-family:Bungee">tweeter</span>
-      <button class="btn-default">Write a new tweet <span class="arrows"> VVV</span> </button>
-    </nav>
-    <header>
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Trevor Thomas</h2>
-          
-      </div>
+  <!--  Character Counter JS-->
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span style="font-family:Bungee">tweeter</span>
+    <button class="btn-default">Write a new tweet <span class="arrows"> VVV</span> </button>
+  </nav>
+  <header class="main-header">
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <br>
+    <div>
+      <h2>Trevor Thomas</h2>
+
+    </div>
   </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-<section class="new-tweet">
-  <h2>Compose Tweet</h2>
-  <form action="/tweets" method="POST" class="testing">
-    <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-    <div class="button-counter">
-      <button type="submit">Tweet</button>
-      <output name="counter" class="counter" for="tweet-text">140</output>
-    </div>
-  </form>
-  <section>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets" method="POST" class="testing">
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div class="button-counter">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+    <section id="posted-tweets">
 
-    
-  </section>
-</section>
+      <article>
+        <header class="posted-header">
+          <p class="nameandage"> Rick Sanchez</p>
+          <p class="handle"> @RnM </p>
+        </header>
+        <p class="posted-content">
+          Can somebody just let me out of here? If I die in a cage, I lose a bet.
+        </p>
+        <footer class="posted-footer">
+          <p class="date-posted">10 days ago</p>
+          <p class="icons"><i class="fa fa-flag"><i class="fas fa-heart"></i></i> <i class="fa fa-retweet"></i>     </p>
+        </footer>
+      </article>
 
 
-    </main>
-  </body>
+    </section>
+
+
+
+
+
+  </main>
+</body>
+
 </html>

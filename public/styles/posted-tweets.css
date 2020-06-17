@@ -1,0 +1,45 @@
+#posted-tweets {
+  align-items: center;
+  border: darkgray 2px solid;
+  padding: 10px;
+  margin-bottom: 10px;
+  opacity: .7;
+  
+}
+
+#posted-tweets:hover{
+  box-shadow: 8px 7px 1px 4px darkgrey;
+  opacity: 3;
+
+}
+
+
+.posted-content {
+  font-weight: 50;
+  max-width: 80%;
+  margin: 8px;
+}
+
+.handle {
+  color:darkgrey;
+  opacity: .5;
+}
+
+.inner-border{
+  border: black 3px;
+}
+
+.posted-header {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  font-size: smaller;
+  font-style: oblique;
+}
+
+.posted-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 4px solid black;
+  font-size: small;
+}

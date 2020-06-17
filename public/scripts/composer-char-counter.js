@@ -14,10 +14,17 @@ $(() => {
 
   $tweetBox.keyup(() => {
 
+    console.log("studd");
     let keyPresses = $tweetBox.val().length;
     $counter.val($charLeft - keyPresses);
+// if ($counter.val() < 0) {
+//   $counter.css('color', 'red')
+// } else {
+//   $counter.css('color', 'grey')
+// }
 
-    $counter.val() < 0 ? $counter.css('color', 'red') : $counter.css('color', 'dark-grey');
+
+    $counter.val() < 0 ? $counter.css('color', 'red') : $counter.css('color', 'grey');
 
   })
 
