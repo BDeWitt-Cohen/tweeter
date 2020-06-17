@@ -6,33 +6,8 @@
 
 $(() => {
 
-  const data = [
-    {
-      "user": {
-        "name": "Rick Sanchez",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@pickleRick"
-      },
-      "content": {
-        "text": "Can somebody just let me out of here? If I die in a cage, I lose a bet."
-      },
-      "created_at": 1461116232227
-    },
-    
-    {
-      "user": {
-        "name": "Morty",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@MortynRick" },
-      "content": {
-        "text": "My idol ones said: I turned myself into a pickle, Morty! I’m Pickle Ri-i-i-ick!"
-      },
-      "created_at": 1461113959088
-    }
-  ]
 
-
+//Takes a JSON object and formats it into the proper format to add a new tweet
   const createTweetElement = function(tweetData) {
 
     let userName = tweetData.user.name
@@ -43,9 +18,8 @@ $(() => {
     let currentDay = new Date()
     let newFull = currentDay.getTime();
     let millisecondsAgo = newFull - timeStamp
-    let daysAgo = Math.round(millisecondsAgo/(1000*60*60*24))
+    let daysAgo = Math.round(millisecondsAgo / (1000 * 60 * 60 * 24))
 
-console.log(daysAgo);
     const $tweet =
       `<article id="posted-tweets">
         <header class="posted-header">
@@ -64,27 +38,48 @@ console.log(daysAgo);
         </footer>
       </article> `
 
-      return $tweet
+    return $tweet
   }
 
-
-
+  //Loops through database of tweets then renders new tweets using createTweetElement function then appends them to the tweet-container
   const renderTweets = function(tweets) {
-    
-    for (const singleTweet of tweets){
-      
-     $(`#tweet-container`).append(createTweetElement(singleTweet))
+
+    for (const singleTweet of tweets) {
+
+      $(`#tweet-container`).append(createTweetElement(singleTweet))
     }
 
-    
+
 
   }
 
-renderTweets(data)
-  
+
+  //Form submissiong using AJAX to avoid refreshing the page
+  $('.tweet-form').on('submit', function(event) {
+    event.preventDefault();
+    const data = $(this).serialize();
+    $('#tweet-container').empty()
+    $.post('/tweets', data)
+      .then(function() {
+console.log(data);
+        loadTweets();
+      })
+  })
 
 
+  //Fetches tweets and receives them as an array
+  const loadTweets = () => {
+    $.getJSON('/tweets')
+      .then(function(data) {
+        console.log('data PROMISE :>> ', data);
+        // We needed to this emptying of the container to avoid duplicate posts in the container since we are continuously appending to it.
+        // $('#tweet-container').empty()
 
+        renderTweets(data)
+      });
+  }
+
+  loadTweets()
 
 })
 
