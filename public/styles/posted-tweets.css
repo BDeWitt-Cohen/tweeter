@@ -1,11 +1,11 @@
 #posted-tweets {
-  align-items: center;
   border: darkgray 2px solid;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 2%;
+  margin: 1% 0%;
   opacity: .7;
   
 }
+
 
 #posted-tweets:hover{
   box-shadow: 8px 7px 1px 4px darkgrey;
@@ -53,4 +53,34 @@
   justify-content: space-between;
   border-top: 4px solid black;
   font-size: small;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1399px) {
+
+  #tweet-container {
+    padding: 2%;
+    margin: 2% 0%;
+    opacity: .7;
+    
+  }
+  
+
+  nav {
+    display: flex;
+      height: 120px;
+      background-color: #4056A1;
+      color: #FFFF;
+      padding: 5% 10% 5%;
+      /* padding-bottom: 50px; */
+      /* padding: 1.5rem; */
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0em;
+      width: 100%;
+      z-index: 2;
+    }
+
+
+
 }

@@ -7,13 +7,23 @@
 $(() => {
 
 
-//Takes a JSON object and formats it into the proper format to add a new tweet
+  $(".new-tweet").hide()
+
+  $("#tweet-button").on('click', function(){
+    console.log("is thing even on");
+    $(".new-tweet").toggle();
+    let $input = $('#tweet-text')
+    $input.focus();
+  });
+
+
+  //Takes a JSON object and formats it into the proper format to add a new tweet
   const createTweetElement = function(tweetData) {
 
     let userName = tweetData.user.name
     let avatar = tweetData.user.avatars
     let handle = tweetData.user.handle
-    let tweetBody = tweetData.content.text
+    let tweetBody = escape(tweetData.content.text)
     let timeStamp = tweetData["created_at"]
     let currentDay = new Date()
     let newFull = currentDay.getTime();
@@ -46,35 +56,60 @@ $(() => {
 
     for (const singleTweet of tweets) {
 
-      $(`#tweet-container`).append(createTweetElement(singleTweet))
+      $(`#tweet-container`).prepend(createTweetElement(singleTweet))
     }
-
-
-
   }
 
+  //Escape function for invalid characters and malicious code
+  const escape = function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  //Error message function
+  const validateTweet = function(str) {
+    if ((str === "") || (str === null)) {
+      $('.form-error-message').text('Hey, if you\'re serious about this, enter some text, mkay?!').slideDown();
+      return true;
+    } else if (str.length > 145) {
+      $('.form-error-message').text('Gear down, big rig. You gotta keep the characters limited to 140, hence the fancy counter that changes colour.').slideDown();
+      return true;
+    } 
+  };
 
   //Form submissiong using AJAX to avoid refreshing the page
   $('.tweet-form').on('submit', function(event) {
     event.preventDefault();
+
+    const text = $('#tweet-text').val().trim();
+    const validate = validateTweet(text);
+
+    if (validate) {
+      return;
+    } else {
+      $('.form-error-message').slideUp();
+    }
+
     const data = $(this).serialize();
-    $('#tweet-container').empty()
+
     $.post('/tweets', data)
       .then(function() {
-console.log(data);
+
+        let $input = $('#tweet-text')
+
+        $input.val('');
+        $input.focus();
+
         loadTweets();
       })
   })
-
 
   //Fetches tweets and receives them as an array
   const loadTweets = () => {
     $.getJSON('/tweets')
       .then(function(data) {
-        console.log('data PROMISE :>> ', data);
-        // We needed to this emptying of the container to avoid duplicate posts in the container since we are continuously appending to it.
-        // $('#tweet-container').empty()
-
+        $('#tweet-container').empty()
         renderTweets(data)
       });
   }

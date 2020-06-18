@@ -1,23 +1,23 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Rick Sanchez",
       "avatars": "https://i.imgur.com/73hZDYK.png"
       ,
-      "handle": "@SirIsaac"
+      "handle": "@pickleRick"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "Can somebody just let me out of here? If I die in a cage I lose a bet."
     },
     "created_at": 1461116232227
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Morty",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@Morty then Rick" },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "My idol once said \"Come on, flip the pickle, Morty, you're not gonna regret it. ... I turned myself into a pickle, Morty! Boom!\""
     },
     "created_at": 1461113959088
   }

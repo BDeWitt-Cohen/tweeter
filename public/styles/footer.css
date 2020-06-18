@@ -1,0 +1,12 @@
+.page-footer {
+  background-color:#ff6600;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  color: black;
+  font-size: x-small;
+  font-family: Bungee;
+  display: flex;
+  justify-content: center;
+  height: 3%;
+  padding: 5%;
+
+}

@@ -5,6 +5,8 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
@@ -31,6 +33,9 @@
   <!--  Posted Tweets CSS-->
   <link rel="stylesheet" href="/styles/posted-tweets.css">
 
+  <!--  Footer CSS-->
+  <link rel="stylesheet" href="/styles/footer.css">
+
   <!--  Bringing in JQuery-->
   <script src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -48,15 +53,29 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span style="font-family:Bungee">tweeter</span>
-    <button class="btn-default">Write a new tweet <span class="arrows"> VVV</span> </button>
+    <button class="btn-default" id="tweet-button"> <i> Write </i> a new tweet <span class="arrows"> <div id="arrowAnim">
+      <div class="arrowSliding">
+        <div class="arrow"></div>
+      </div>
+      <div class="arrowSliding delay1">
+        <div class="arrow"></div>
+      </div>
+      <div class="arrowSliding delay2">
+        <div class="arrow"></div>
+      </div>
+      <div class="arrowSliding delay3">
+        <div class="arrow"></div>
+      </div>
+    </div></span> </button>
   </nav>
+  <div class="header-tweets">
   <header class="main-header">
     <div>
-      <img src="/images/profile-hex.png">
+      <img class="header-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHcrPu21bZ4p8xFknpJZ-_Thm7Ax7lM2g9o1Acg7Y32B9wiAhk&usqp=CAU">
     </div>
     <br>
     <div>
-      <h2>Trevor Thomas</h2>
+      <h2 class="header-name">Rick (PR) Sanchez</h2>
 
     </div>
   </header>
@@ -66,6 +85,7 @@
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form action="/tweets" method="POST" class="tweet-form">
+        <div class="form-error-message"></div>
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="button-counter">
           <button type="submit">Tweet</button>
@@ -75,11 +95,16 @@
     </section>
     <section id="tweet-container">
     </section>
-
-
+  </div>
 
 
   </main>
+
+  <footer class="page-footer">
+    Sometimes Science Is More Art Than Science, Morty
+    
+    </footer>
+    
 </body>
 
 </html>
