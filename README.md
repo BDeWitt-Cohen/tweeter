@@ -4,9 +4,9 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
 
-!["Large Monitor View"](/tweeter/docs/Tweeter-Large-Monitor.png)
-!["Mobile View"](tweeter/docs/Tweeter-Mobile.png)
-!["Tablet View"](tweeter/docs/Tweeter-Tablet.png)
+!["Large Monitor View"](./docs/Tweeter-Large-Monitor.png)
+!["Mobile View"](./docs/Tweeter-Mobile.png)
+!["Tablet View"](./docs/Tweeter-Tablet.png)
 
 
 ## Dependencies
