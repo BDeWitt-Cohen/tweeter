@@ -53,58 +53,56 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span style="font-family:Bungee">tweeter</span>
-    <button class="btn-default" id="tweet-button"> <i> Write </i> a new tweet <span class="arrows"> <div id="arrowAnim">
-      <div class="arrowSliding">
-        <div class="arrow"></div>
-      </div>
-      <div class="arrowSliding delay1">
-        <div class="arrow"></div>
-      </div>
-      <div class="arrowSliding delay2">
-        <div class="arrow"></div>
-      </div>
-      <div class="arrowSliding delay3">
-        <div class="arrow"></div>
-      </div>
-    </div></span> </button>
+    <button class="btn-default" id="tweet-button"> <i> Write </i> a new tweet <span class="arrows">
+        <div id="arrowAnim">
+          <div class="arrowSliding">
+            <div class="arrow"></div>
+          </div>
+          <div class="arrowSliding delay1">
+            <div class="arrow"></div>
+          </div>
+          <div class="arrowSliding delay2">
+            <div class="arrow"></div>
+          </div>
+          <div class="arrowSliding delay3">
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </span> </button>
   </nav>
   <div class="header-tweets">
-  <header class="main-header">
-    <div>
-      <img class="header-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHcrPu21bZ4p8xFknpJZ-_Thm7Ax7lM2g9o1Acg7Y32B9wiAhk&usqp=CAU">
-    </div>
-    <br>
-    <div>
-      <h2 class="header-name">Rick (PR) Sanchez</h2>
+    <header class="main-header">
+      <div>
+        <img class="header-image"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHcrPu21bZ4p8xFknpJZ-_Thm7Ax7lM2g9o1Acg7Y32B9wiAhk&usqp=CAU"
+          alt="https://cdn.images.express.co.uk/img/dynamic/20/750x445/1258861.jpg">
+      </div>
+      <br>
+      <div>
+        <h2 class="header-name">Rick (PR) Sanchez</h2>
 
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST" class="tweet-form">
-        <div class="form-error-message"></div>
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div class="button-counter">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <section id="tweet-container">
-    </section>
+      </div>
+    </header>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST" class="tweet-form">
+          <div class="form-error-message"></div>
+          <textarea name="text" id="tweet-text" placeholder="And that's the waaaaaayyyyy the news goes!"></textarea>
+          <div class="button-counter">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section id="tweet-container">
+      </section>
   </div>
-
-
   </main>
-
   <footer class="page-footer">
     Sometimes Science Is More Art Than Science, Morty
-    
-    </footer>
-    
+  </footer>
 </body>
 
 </html>

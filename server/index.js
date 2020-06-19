@@ -30,5 +30,5 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 app.use("/tweets", tweetsRoutes);
 
 app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
+  console.log(`Your port is "${PORT}" and it's 🔥🔥🔥`);
 });
