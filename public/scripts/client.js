@@ -75,7 +75,7 @@ $(() => {
       $('.form-error-message').text('Hey, if you\'re serious about this, enter some text, mkay?!').slideDown();
       return true;
 
-    } else if (str.length > 145) {
+    } else if (str.length > 140) {
       $('.form-error-message').text('Gear down, big rig. You gotta keep the characters limited to 140, hence the fancy counter that changes colour.').slideDown();
       return true;
 
